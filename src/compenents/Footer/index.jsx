@@ -6,22 +6,22 @@ function Footer() {
       <div className={styles.container}>
         <div className={styles.colunas}>
           <p>EMPRESA</p>
-          <a href="">Sobre Nós</a>
-          <a href="">Carreiras</a>
-          <a href="">Blog da Empresa</a>
+          <Link to="/sobre">Sobre Nós</Link>
+          <Link to="/">Carreiras</Link>
+          <Link to="/">Blog da Empresa</Link>
         </div>
         <div className={styles.colunas}>
           <p>Ajuda</p>
-          <a href="">Faq</a>
-          <a href="">Chat Online</a>
-          <a href="">WhatsApp</a>
+          <Link to="/">Faq</Link>
+          <Link to="/">Chat Online</Link>
+          <Link to="/">WhatsApp</Link>
         </div>
         <div className={styles.colunas}>
           <p>Redes Sociais</p>
-          <a href="">Facebook</a>
-          <a href="">Instagram</a>
-          <a href="">Linkedin</a>
-          <a href="">YouTube</a>
+          <Link to="/">Facebook</Link>
+          <Link to="/">Instagram</Link>
+          <Link to="/">Linkedin</Link>
+          <Link to="/">YouTube</Link>
         </div>
       </div>
       <div className={styles.colunas}>

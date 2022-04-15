@@ -4,13 +4,13 @@ import Botao from "../../compenents/BotaoSubmit";
 import Input from "../../compenents/Input";
 import styles from "./Login.module.css";
 function Login() {
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState("");
 
   function handleOnChange(e) {
     setValue({ ...value, [e.target.name]: e.target.value });
   }
   return (
-    <form className={styles.form} onSubmit={() => alert(Object.values(value))}>
+    <form className={styles.form} onSubmit={() => console.log(Object.values(value))}>
       <div className={styles.titulo}>
         <h1>Login</h1>
       </div>
