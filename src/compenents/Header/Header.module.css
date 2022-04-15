@@ -1,16 +1,15 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border: 1px groove #868da0;
   padding: 1em;
-  background-color: #EEF3F8;
-}
-.categorias {
-  width: 40%;
+  background-color: #eef3f8;
 }
 .logo {
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  z-index: 1;
 }

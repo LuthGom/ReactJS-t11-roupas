@@ -27,8 +27,8 @@ function App() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="*" element={<Pagina404 />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

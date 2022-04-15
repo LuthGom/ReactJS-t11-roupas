@@ -1,6 +1,7 @@
 .descricaoContainer{
     display: flex;
     justify-content: space-evenly;
+    background-color: white;
 
 }
 .descricao{
@@ -17,5 +18,5 @@
     font-weight: bold;
 }
 .banner{
-    height: 500px;
+    height: 300px;
 }

@@ -30,6 +30,13 @@ function Cadastro() {
           onChange={handleOnChange}
         />
         <Input
+          placeholder="Apelido"
+          height="20px"
+          width="250px"
+          name="apelido"
+          onChange={handleOnChange}
+        />
+        <Input
           placeholder="Senha"
           height="20px"
           width="250px"
