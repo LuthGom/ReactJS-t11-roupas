@@ -2,7 +2,7 @@ import banner from "../../assets/banner-promocional.png";
 import styles from "./Banner.module.css";
 function Banner() {
   return (
-    <div>
+    <>
       <div className={styles.descricaoContainer}>
         <div className={styles.descricao}>
           <p>parcele em</p>
@@ -24,7 +24,7 @@ function Banner() {
           className={styles.banner}
         />
       </div>
-    </div>
+    </>
   );
 }
 
