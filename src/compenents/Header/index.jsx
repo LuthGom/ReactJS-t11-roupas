@@ -14,14 +14,14 @@ function Home() {
       <div className={styles.logo}>
         <Link to="/">
           <img
+            className={styles.logoImg}
             src={logo1}
             alt="Logo tipo da loja com imagem de tubarão com fundo branco e arc-íris"
-         
           />
           <img
+             className={styles.logoImg}
             src={logo2}
             alt="Logo tipo da loja com imagem de tubarão com fundo preto e arc-íris"
-           
           />
         </Link>
       </div>

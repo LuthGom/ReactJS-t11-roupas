@@ -13,17 +13,18 @@
   background-color: #eef3f8;
   min-width: 300px;
 }
-.logo{
+.logo {
   display: flex;
   justify-content: center;
 }
-.logo a{
-  width: 100%;
+.logo a {
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
-.logo img{
-  min-width: 100px;
+.logo img {
+  min-height: 75px;
+  max-height: 150px;
+  min-width: 75px;
   max-width: 150px;
 }
