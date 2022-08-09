@@ -24,7 +24,7 @@ function Footer() {
           <Link to="/">YouTube</Link>
         </div>
       </div>
-      <div className={styles.colunas}>
+      <div >
         <span className={styles.copy}>
           <p>© Todos os Direitos Reservados T11 Roupas</p>
         </span>
