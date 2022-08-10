@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 import Pagina404 from "./pages/Pagina404";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
-import Masculino from "./pages/Masculino";
-import Feminino from "./pages/Feminino";
-import LGBT from "./pages/LGBTQIA";
+import Masculino from "./pages/Categorias/Masculino";
+import Feminino from "./pages//Categorias/Feminino";
+import LGBT from "./pages//Categorias/LGBTQIA";
 function App() {
   return (
     <div className="App">
