@@ -3,14 +3,14 @@ import "./App.css";
 import Home from "./pages/Home";
 import Contato from "./pages/Contato";
 import Sobre from "./pages/Sobre";
-import Header from "./compenents/Header";
-import Footer from "./compenents/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Pagina404 from "./pages/Pagina404";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Masculino from "./pages/Masculino";
 import Feminino from "./pages/Feminino";
-import LGBT from "./pages/LGBTQIA+";
+import LGBT from "./pages/LGBTQIA";
 function App() {
   return (
     <div className="App">

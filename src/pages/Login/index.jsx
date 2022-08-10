@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Botao from "../../compenents/BotaoSubmit";
-import Input from "../../compenents/Input";
+import Botao from "../../components/BotaoSubmit";
+import Input from "../../components/Input";
 import styles from "./Login.module.css";
 function Login() {
   const [value, setValue] = useState("");

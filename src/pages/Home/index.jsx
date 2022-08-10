@@ -1,4 +1,4 @@
-import Banner from "../../compenents/Banner";
+import Banner from "../../components/Banner";
 import styles from "./Home.module.css";
 function Home() {
   return (

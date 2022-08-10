@@ -1,4 +1,4 @@
-import Input from "../../compenents/Input";
+import Input from "../../components/Input";
 import styles from "./Contato.module.css";
 import contatoImg from "../../assets/contato.jpg";
 function Contato() {

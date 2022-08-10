@@ -1,6 +1,6 @@
 import styles from "./Cadastro.module.css";
-import Input from "../../compenents/Input";
-import Botao from "../../compenents/BotaoSubmit";
+import Input from "../../components/Input";
+import Botao from "../../components/BotaoSubmit";
 import { useState } from "react";
 function Cadastro() {
   const [checked, setChecked] = useState(false);
