@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { produtosUrl } from "../../services/apis";
 import Item from "../../components/Item";
-import styles from "./Masculino.module.css";
+import styles from "./Categorias.module.css";
 import BotaoSubmit from "../../components/BotaoSubmit";
-export default function Feminino() {
+export default function LGBTQIA() {
   const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
     try {
-      fetch(produtosUrl("/masculinos"))
+      fetch(produtosUrl("/lgbt"))
         .then((res) => res.json())
         .then((data) => {
           setProdutos(data.Produtos);
