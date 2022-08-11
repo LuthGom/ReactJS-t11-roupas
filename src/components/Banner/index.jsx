@@ -17,11 +17,11 @@ function Banner() {
           <p>na sua primeira compra</p>
         </div>
       </div>
-      <div>
+      <div className={styles.banner}>
         <img
           src={banner}
           alt="banner promocional com fotos de roupas masculinas e descontos e site da loja"
-          className={styles.banner}
+          
         />
       </div>
     </>
