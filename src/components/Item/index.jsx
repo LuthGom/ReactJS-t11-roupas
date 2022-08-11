@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { useState } from "react";
 import styles from "./Item.module.css";
-
-function Item({ img, descricao, titulo, preco,  }) {
-  
+import { CarrinhoContext } from "../../context/CarrinhoProvider";
+function Item({ img, descricao, titulo, preco, produto, id }) {
+  const { addItemAoCarrinho } = useContext(CarrinhoContext);
 
   function filtroCaracteres(desc) {
     if (desc.length < 20) {
@@ -23,9 +22,8 @@ function Item({ img, descricao, titulo, preco,  }) {
         <p>R${preco}</p>
       </div>
       <div>
-        <button>
+        <button onClick={() => addItemAoCarrinho(produto)}>
           Add ao Carrinho
-          
         </button>
       </div>
     </div>
