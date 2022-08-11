@@ -24,11 +24,11 @@ export default function LGBTQIA() {
         return (
           <Item
             key={index}
+            produto={produto}
             img={produto.url_imagem}
             titulo={produto.titulo}
             preco={produto.preco}
             descricao={produto.descricao}
-            item={produto}
           />
         );
       })}
