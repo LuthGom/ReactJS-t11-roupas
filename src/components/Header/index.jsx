@@ -4,7 +4,9 @@ import logo2 from "../../assets/Logotipos/2.png";
 import NavBar from "../NavBar";
 import Categorias from "../Categorias";
 import { Link } from "react-router-dom";
-
+import BotaoCarrinho from "../BotaoCarrinho";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 function Home() {
   return (
     <header className={styles.container}>
@@ -19,13 +21,19 @@ function Home() {
             alt="Logo tipo da loja com imagem de tubarão com fundo branco e arc-íris"
           />
           <img
-             className={styles.logoImg}
+            className={styles.logoImg}
             src={logo2}
             alt="Logo tipo da loja com imagem de tubarão com fundo preto e arc-íris"
           />
         </Link>
       </div>
       <NavBar />
+      <div>
+        <BotaoCarrinho
+          addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
+          counter={0}
+        ></BotaoCarrinho>
+      </div>
     </header>
   );
 }
