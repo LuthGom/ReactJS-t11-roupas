@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 import BotaoCarrinho from "../BotaoCarrinho";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { CarrinhoContext } from "../../context/CarrinhoProvider";
+import { useContext } from "react";
 function Home() {
+  const { lista } = useContext(CarrinhoContext);
   return (
     <header className={styles.container}>
       <div className={styles.categorias}>
@@ -31,7 +34,7 @@ function Home() {
       <div>
         <BotaoCarrinho
           addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
-          counter={0}
+          counter={lista.length}
         ></BotaoCarrinho>
       </div>
     </header>
