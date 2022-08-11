@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { produtosUrl } from "../../../services/apis";
 import Item from "../../../components/Item";
 import styles from "../Categorias.module.css";
-import BotaoSubmit from "../../../components/BotaoSubmit";
 export default function LGBTQIA() {
   const [produtos, setProdutos] = useState([]);
 
@@ -29,6 +28,7 @@ export default function LGBTQIA() {
             titulo={produto.titulo}
             preco={produto.preco}
             descricao={produto.descricao}
+            item={produto}
           />
         );
       })}

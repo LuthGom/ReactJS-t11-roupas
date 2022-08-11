@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import { useState } from "react";
 import styles from "./Item.module.css";
-function Item({ img, descricao, titulo, preco }) {
+
+function Item({ img, descricao, titulo, preco,  }) {
+  
+
   function filtroCaracteres(desc) {
     if (desc.length < 20) {
       return desc;
@@ -16,6 +21,12 @@ function Item({ img, descricao, titulo, preco }) {
       </div>
       <div className={styles.preco}>
         <p>R${preco}</p>
+      </div>
+      <div>
+        <button>
+          Add ao Carrinho
+          
+        </button>
       </div>
     </div>
   );
