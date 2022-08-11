@@ -11,25 +11,28 @@ import Cadastro from "./pages/Cadastro";
 import Masculino from "./pages/Categorias/Masculino";
 import Feminino from "./pages//Categorias/Feminino";
 import LGBT from "./pages//Categorias/LGBTQIA";
+import CarrinhoProvider from "./context/CarrinhoProvider";
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/masculino" element={<Masculino />} />
-          <Route path="/feminino" element={<Feminino />} />
-          <Route path="/lgbt" element={<LGBT />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/contato" element={<Contato />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="*" element={<Pagina404 />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <>
+      <CarrinhoProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/masculino" element={<Masculino />} />
+            <Route path="/feminino" element={<Feminino />} />
+            <Route path="/lgbt" element={<LGBT />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/contato" element={<Contato />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="*" element={<Pagina404 />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </CarrinhoProvider>
+    </>
   );
 }
 
