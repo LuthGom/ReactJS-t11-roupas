@@ -13,11 +13,13 @@ export default function CarrinhoModal({
   onClick,
   botaoNome,
 }) {
-  const [counterQtde, setCounter] = useState(1);
-  const { lista } = useContext(CarrinhoContext);
-  function contador() {
-    return setCounter(counterQtde + 1);
-  }
+  const {
+    lista,
+    incrementaProdutos,
+    decrementaOuRemove,
+    qtde,
+  } = useContext(CarrinhoContext);
+
   return (
     <div className={styles.container}>
       <Modal
@@ -36,20 +38,18 @@ export default function CarrinhoModal({
               <p className={styles.titulo}>{produto.titulo}</p>
               <p className={styles.preco}> R$ {produto.preco}</p>
               <p className={styles.descricao}>{produto.descricao}</p>
-              <p>{counterQtde}</p>
               <div className={styles.counter}>
                 <BotaoCarrinho
                   addOuRemove="+"
-                  click={() => contador()}
+                  click={() => incrementaProdutos(produto)}
                 ></BotaoCarrinho>
-                <p>{counterQtde}</p>
+                <p>{qtde.filter((item) => item == produto).length}</p>
                 <BotaoCarrinho
                   addOuRemove="-"
                   click={() => {
-                    if (counterQtde > 0) {
-                      return setCounter(counterQtde - 1);
-                    }else if(counterQtde === 0) {
-                      
+                    decrementaOuRemove(produto);
+                    if (qtde.filter((item) => item == produto).length == 0) {
+                      decrementaOuRemove(produto);
                     }
                   }}
                 ></BotaoCarrinho>
@@ -57,22 +57,23 @@ export default function CarrinhoModal({
             </div>
           );
         })}
-        {lista.length > 0 &&
-          lista
-            .map((produto) => {
-              if (counterQtde > 0) {
-                return counterQtde * produto.preco;
-              } else {
-                return produto.preco;
-              }
-            })
-            .reduce((atual, acum) => {
-              return (
-                <div>
-                  <p>{atual + acum}</p>
-                </div>
-              );
-            })}
+        <div>
+          <span>Total: R$ </span>
+          {qtde.length > 0 &&
+            qtde
+              .map((produto) => {
+                let qtdeDoProduto = qtde.filter(
+                  (item) => item == produto
+                ).length;
+                if ((qtdeDoProduto = 1)) {
+                  return produto.preco;
+                }
+                return qtdeDoProduto * produto.preco;
+              })
+              .reduce((atual, acum) => {
+                return atual + acum;
+              })}
+        </div>
       </Modal>
     </div>
   );
