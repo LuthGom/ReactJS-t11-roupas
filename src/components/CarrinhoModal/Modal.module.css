@@ -1,0 +1,56 @@
+.containerModal {
+  width: 30%;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+  position: fixed;
+  bottom: 15%;
+  left: 65%;
+  border: 3px solid gray;
+  padding: 1em;
+  box-shadow: 10px 10px 10px black, -10px -10px 10px black;
+}
+.containerCard {
+  width: 80%;
+  border: 1px groove black;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 2em;
+}
+.containerCard img {
+  min-width: 25%;
+  min-height: 25%;
+  max-width: 50%;
+  max-height: 50%;
+}
+.titulo {
+  font-size: 22px;
+  font-weight: bold;
+}
+.preco {
+  font-size: 20px;
+}
+.descricao {
+  font-size: 18px;
+  text-align: justify;
+}
+.counter {
+  width: 50%;
+  height: 25%;
+  margin: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.counter button,
+.counter p {
+  height: 25px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.closeButton{
+    position: fixed;
+}

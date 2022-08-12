@@ -28,7 +28,7 @@ export default function Feminino() {
             titulo={produto.titulo}
             preco={produto.preco}
             descricao={produto.descricao}
-            item={produto}
+            produto={produto}
           />
         );
       })}

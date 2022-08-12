@@ -22,7 +22,12 @@ function Item({ img, descricao, titulo, preco, produto, id }) {
         <p>R${preco}</p>
       </div>
       <div>
-        <button onClick={() => addItemAoCarrinho(produto)}>
+        <button
+          onClick={() => {
+            addItemAoCarrinho(produto);
+           
+          }}
+        >
           Add ao Carrinho
         </button>
       </div>

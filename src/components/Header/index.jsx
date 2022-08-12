@@ -9,8 +9,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { CarrinhoContext } from "../../context/CarrinhoProvider";
 import { useContext } from "react";
+import { useState } from "react";
+import CarrinhoModal from "../CarrinhoModal";
 function Home() {
   const { lista } = useContext(CarrinhoContext);
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
   return (
     <header className={styles.container}>
       <div className={styles.categorias}>
@@ -34,8 +44,15 @@ function Home() {
       <div>
         <BotaoCarrinho
           addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
+          click={openModal}
           counter={lista.length}
         ></BotaoCarrinho>
+        <CarrinhoModal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          onClick={closeModal}
+          botaoNome="X"
+        />
       </div>
     </header>
   );
