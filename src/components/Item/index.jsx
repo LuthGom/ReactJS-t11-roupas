@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import styles from "./Item.module.css";
 import { CarrinhoContext } from "../../context/CarrinhoProvider";
+import BotaoCarrinho from "../BotaoCarrinho";
 function Item({ img, descricao, titulo, preco, produto, id }) {
   const { addItemAoCarrinho } = useContext(CarrinhoContext);
 
@@ -22,14 +23,12 @@ function Item({ img, descricao, titulo, preco, produto, id }) {
         <p>R${preco}</p>
       </div>
       <div>
-        <button
-          onClick={() => {
+        <BotaoCarrinho
+          click={() => {
             addItemAoCarrinho(produto);
-           
           }}
-        >
-          Add ao Carrinho
-        </button>
+          addOuRemove="Add ao Carrinho"
+        ></BotaoCarrinho>
       </div>
     </div>
   );
