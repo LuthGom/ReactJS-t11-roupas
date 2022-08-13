@@ -1,17 +1,36 @@
-.containerModal {
+.overlayContainer {
+  background-color: black;
+}
+.containerModal,
+.modalFooter {
   width: 30%;
+  height: 50%;
   max-height: calc(100vh - 210px);
   overflow-y: auto;
   position: fixed;
-  bottom: 15%;
+  bottom: 30%;
   left: 65%;
   border: 3px solid gray;
   padding: 1em;
   box-shadow: 10px 10px 10px black, -10px -10px 10px black;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modalFooter {
+  height: 10px;
+  background: whitesmoke;
+  border: none;
+  box-shadow: none;
+  width: 30.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.modalFooter::-webkit-scrollbar {
+  display: none;
 }
 .containerCard {
   width: 80%;
-  border: 1px groove black;
+  border: 1px groove gray;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -19,6 +38,8 @@
   align-items: center;
   padding: 1em;
   margin: 2em;
+  color: black;
+  background-color: #fef4f4;
 }
 .containerCard img {
   min-width: 25%;
@@ -39,7 +60,6 @@
 }
 .counter {
   width: 50%;
-  height: 25%;
   margin: 1em;
   display: flex;
   justify-content: space-evenly;
@@ -51,6 +71,10 @@
   font-size: 20px;
   font-weight: bold;
 }
-.closeButton{
-    position: fixed;
+
+.modalFooter span {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
 }
+
