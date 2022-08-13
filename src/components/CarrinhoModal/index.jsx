@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useContext } from "react";
 import Modal from "react-modal";
 import { CarrinhoContext } from "../../context/CarrinhoProvider";
@@ -28,7 +27,7 @@ export default function CarrinhoModal({
         {lista.map((produto, index) => {
           return (
             <div className={styles.containerCard} key={index}>
-              <img src={produto.url_imagem} />
+              <img src={produto.url_imagem} alt={produto.descricao}/>
               <p className={styles.titulo}>{produto.titulo}</p>
               <p className={styles.preco}> R$ {produto.preco}</p>
               <p className={styles.descricao}>{produto.descricao}</p>
@@ -37,12 +36,12 @@ export default function CarrinhoModal({
                   addOuRemove="+"
                   click={() => incrementaProdutos(produto)}
                 ></BotaoCarrinho>
-                <p>{qtde.filter((item) => item == produto).length}</p>
+                <p>{qtde.filter((item) => item === produto).length}</p>
                 <BotaoCarrinho
                   addOuRemove="-"
                   click={() => {
                     decrementaOuRemove(produto);
-                    if (qtde.filter((item) => item == produto).length == 0) {
+                    if (qtde.filter((item) => item === produto).length === 0) {
                       decrementaOuRemove(produto);
                     }
                   }}
@@ -61,7 +60,7 @@ export default function CarrinhoModal({
               qtde
                 .map((produto) => {
                   let qtdeDoProduto = qtde.filter(
-                    (item) => item == produto
+                    (item) => item === produto
                   ).length;
                   if ((qtdeDoProduto = 1)) {
                     return produto.preco;
