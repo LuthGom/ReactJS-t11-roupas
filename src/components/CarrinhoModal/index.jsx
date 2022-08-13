@@ -13,24 +13,18 @@ export default function CarrinhoModal({
   onClick,
   botaoNome,
 }) {
-  const {
-    lista,
-    incrementaProdutos,
-    decrementaOuRemove,
-    qtde,
-  } = useContext(CarrinhoContext);
+  const { lista, incrementaProdutos, decrementaOuRemove, qtde } =
+    useContext(CarrinhoContext);
 
   return (
-    <div className={styles.container}>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={onRequestClose}
-        contentElement={contentLabel}
-        className={styles.containerModal}
-      >
-        <button className={styles.closeButton} onClick={onClick}>
-          {botaoNome}
-        </button>
+    <Modal
+      overlayClassName={styles.overlayContainer}
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      contentElement={contentLabel}
+      className={styles.containerModal}
+    >
+      <div>
         {lista.map((produto, index) => {
           return (
             <div className={styles.containerCard} key={index}>
@@ -57,24 +51,29 @@ export default function CarrinhoModal({
             </div>
           );
         })}
-        <div>
-          <span>Total: R$ </span>
-          {qtde.length > 0 &&
-            qtde
-              .map((produto) => {
-                let qtdeDoProduto = qtde.filter(
-                  (item) => item == produto
-                ).length;
-                if ((qtdeDoProduto = 1)) {
-                  return produto.preco;
-                }
-                return qtdeDoProduto * produto.preco;
-              })
-              .reduce((atual, acum) => {
-                return atual + acum;
-              })}
+        <div className={styles.modalFooter}>
+          <button className={styles.closeButton} onClick={onClick}>
+            {botaoNome}
+          </button>
+          <span>
+            Total: R$
+            {qtde.length > 0 &&
+              qtde
+                .map((produto) => {
+                  let qtdeDoProduto = qtde.filter(
+                    (item) => item == produto
+                  ).length;
+                  if ((qtdeDoProduto = 1)) {
+                    return produto.preco;
+                  }
+                  return qtdeDoProduto * produto.preco;
+                })
+                .reduce((atual, acum) => {
+                  return atual + acum;
+                })}
+          </span>
         </div>
-      </Modal>
-    </div>
+      </div>
+    </Modal>
   );
 }
