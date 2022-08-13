@@ -77,4 +77,11 @@
   font-size: 20px;
   font-weight: bold;
 }
-
+.modalFooter button {
+  background-color: black;
+  color: white;
+}
+.modalFooter button:hover{
+  background-color: gray;
+  cursor: pointer;
+}
