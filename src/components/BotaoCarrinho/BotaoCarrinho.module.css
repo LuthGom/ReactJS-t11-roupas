@@ -1,0 +1,11 @@
+.botaoCarrinho{
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+.botaoCarrinho:hover{
+    background-color: gray;
+    cursor: pointer;
+}
