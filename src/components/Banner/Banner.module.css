@@ -1,12 +1,14 @@
 @media only screen and (max-width: 830px) {
     .descricaoContainer {
-      padding-top: 100px;
+      padding-top: 7em;
+     
     }
   }
 .descricaoContainer {
   display: flex;
   justify-content: space-evenly;
   background-color: white;
+  margin-top: 10px;
 }
 .descricao {
   display: flex;
@@ -31,5 +33,5 @@
   min-height: 200px;
   max-height: 400px;
   min-width: 300px;
-  max-width: 95%;
+  max-width: 100%;
 }
