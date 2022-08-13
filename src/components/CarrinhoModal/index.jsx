@@ -57,7 +57,7 @@ export default function CarrinhoModal({
           </button>
           <span>
             Total: R$
-            {qtde.length > 0 &&
+            {(qtde.length > 0 &&
               qtde
                 .map((produto) => {
                   let qtdeDoProduto = qtde.filter(
@@ -70,7 +70,8 @@ export default function CarrinhoModal({
                 })
                 .reduce((atual, acum) => {
                   return atual + acum;
-                })}
+                })) ||
+              "0,00"}
           </span>
         </div>
       </div>
