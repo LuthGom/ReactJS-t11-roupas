@@ -5,7 +5,6 @@ export const CarrinhoContext = createContext();
 export default function CarrinhoProvider({ children }) {
   const [lista, setLista] = useState([]);
   const [qtde, setQtde] = useState([]);
-  console.log(total);
   function addItemAoCarrinho(item) {
     const novoItem = lista.includes(item);
     if (!novoItem) {
