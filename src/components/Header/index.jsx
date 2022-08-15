@@ -44,7 +44,8 @@ function Home() {
       <div>
         <BotaoCarrinho
           addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
-          click={modalIsOpen === false ? openModal : closeModal}
+          click={
+            modalIsOpen === false ? openModal : closeModal}
           counter={lista.length}
         ></BotaoCarrinho>
         <CarrinhoModal

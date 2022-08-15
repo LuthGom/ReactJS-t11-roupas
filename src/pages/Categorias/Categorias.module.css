@@ -1,7 +1,11 @@
 .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50%, 350px));
-    justify-items: center;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 350px));
+  justify-items: center;
+  width: 100%;
+}
+@media only screen and (max-width: 830px) {
+  .container {
+    padding-top: 7em;
   }
-  
+}
