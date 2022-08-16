@@ -12,9 +12,10 @@ import Masculino from "./pages/Categorias/Masculino";
 import Feminino from "./pages//Categorias/Feminino";
 import LGBT from "./pages//Categorias/LGBTQIA";
 import CarrinhoProvider from "./context/CarrinhoProvider";
+import { AuthProvider } from "./context/AuthProvider";
 function App() {
   return (
-    <>
+    <AuthProvider>
       <CarrinhoProvider>
         <Router>
           <Header />
@@ -32,7 +33,7 @@ function App() {
           <Footer />
         </Router>
       </CarrinhoProvider>
-    </>
+    </AuthProvider>
   );
 }
 
