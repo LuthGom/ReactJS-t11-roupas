@@ -13,6 +13,8 @@ import Feminino from "./pages//Categorias/Feminino";
 import LGBT from "./pages//Categorias/LGBTQIA";
 import CarrinhoProvider from "./context/CarrinhoProvider";
 import { AuthProvider } from "./context/AuthProvider";
+import Protected from "./pages/Protected";
+import Carrinho from "./pages/Carrinho";
 function App() {
   return (
     <AuthProvider>
@@ -24,6 +26,14 @@ function App() {
             <Route path="/masculino" element={<Masculino />} />
             <Route path="/feminino" element={<Feminino />} />
             <Route path="/lgbt" element={<LGBT />} />
+            <Route
+              path="/carrinho"
+              element={
+                <Protected>
+                  <Carrinho />
+                </Protected>
+              }
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/contato" element={<Contato />} />
