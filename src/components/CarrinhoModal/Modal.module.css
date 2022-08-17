@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  bottom: 20%;
 }
 .modalFooter::-webkit-scrollbar {
   display: none;
@@ -53,6 +54,12 @@ div.containerCard {
   min-height: 10%;
   max-width: 50%;
   max-height: 50%;
+}
+.titulo,
+.preco,
+.descricao,
+.counter {
+  margin: 0;
 }
 .titulo {
   font-size: 22px;
@@ -98,13 +105,12 @@ div.containerCard {
   .modalFooter {
     left: 5%;
     width: 80%;
-    bottom: 30%;
   }
   .containerModal {
     height: 80%;
   }
   .containerCard {
-    width: 100%;
+    width: 90%;
     margin: 1em;
   }
 }
