@@ -8,11 +8,13 @@ import BotaoCarrinho from "../BotaoCarrinho";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { CarrinhoContext } from "../../context/CarrinhoProvider";
-import { useContext } from "react";
 import { useState } from "react";
 import CarrinhoModal from "../CarrinhoModal";
+import { useContext } from "react";
+import { useAuth } from "../../context/AuthProvider/useAuth";
 function Home() {
   const { lista } = useContext(CarrinhoContext);
+  const auth = useAuth();
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -42,18 +44,36 @@ function Home() {
       </div>
       <NavBar />
       <div>
-        <BotaoCarrinho
-          addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
-          click={
-            modalIsOpen === false ? openModal : closeModal}
-          counter={lista.length}
-        ></BotaoCarrinho>
-        <CarrinhoModal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          onClick={closeModal}
-          botaoNome="X"
-        />
+        {(auth.email && (
+          <>
+            <p>Olá, {auth.email}</p>
+            <BotaoCarrinho
+              addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
+              click={modalIsOpen === false ? openModal : closeModal}
+              counter={lista.length}
+            ></BotaoCarrinho>
+            <CarrinhoModal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              onClick={closeModal}
+              botaoNome="X"
+            />
+          </>
+        )) || (
+          <>
+            <BotaoCarrinho
+              addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
+              click={modalIsOpen === false ? openModal : closeModal}
+              counter={lista.length}
+            ></BotaoCarrinho>
+            <CarrinhoModal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              onClick={closeModal}
+              botaoNome="X"
+            />
+          </>
+        )}
       </div>
     </header>
   );
