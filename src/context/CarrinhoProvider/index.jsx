@@ -10,7 +10,7 @@ export default function CarrinhoProvider({ children }) {
     if (!novoItem) {
       setLista([...lista, item]);
       setQtde([...qtde, item])
-      console.log(lista);
+
     } else {
       setLista(lista);
     }
