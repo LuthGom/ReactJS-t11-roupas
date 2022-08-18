@@ -15,6 +15,7 @@ import CarrinhoProvider from "./context/CarrinhoProvider";
 import { AuthProvider } from "./context/AuthProvider";
 import Protected from "./pages/Protected";
 import Carrinho from "./pages/Carrinho";
+import "material-react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <AuthProvider>
