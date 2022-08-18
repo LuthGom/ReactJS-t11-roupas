@@ -6,14 +6,20 @@ import Categorias from "../Categorias";
 import { Link } from "react-router-dom";
 import BotaoCarrinho from "../BotaoCarrinho";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faSquareCaretDown,
+} from "@fortawesome/free-solid-svg-icons";
 import { CarrinhoContext } from "../../context/CarrinhoProvider";
-import { useContext } from "react";
 import { useState } from "react";
 import CarrinhoModal from "../CarrinhoModal";
+import { useContext } from "react";
+import { useAuth } from "../../context/AuthProvider/useAuth";
 function Home() {
   const { lista } = useContext(CarrinhoContext);
+  const auth = useAuth();
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [btnList, setBtnList] = useState(false);
 
   function openModal() {
     setIsOpen(true);
@@ -41,11 +47,57 @@ function Home() {
         </Link>
       </div>
       <NavBar />
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
+          flexDirection: "column",
+        }}
+      >
+        {auth.email && (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              margin: 0,
+            }}
+          >
+            <p style={{ paddingRight: "0.3em" }}>Olá, {auth.email}</p>
+            <button
+              onClick={() => {
+                setBtnList(true);
+              }}
+              style={{ background: "none", border: "none" }}
+            >
+              {<FontAwesomeIcon icon={faSquareCaretDown} />}
+            </button>
+            {(btnList === false && (
+              <div style={{ display: "none" }}>
+                <button
+                  onClick={() => auth.logout()}
+                  style={{ background: "none", border: "none" }}
+                >
+                  Logout
+                </button>
+              </div>
+            )) || (
+              <div style={{ display: "block" }}>
+                <button
+                  onClick={() => auth.logout()}
+                  style={{ background: "none", border: "none" }}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
         <BotaoCarrinho
           addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
-          click={
-            modalIsOpen === false ? openModal : closeModal}
+          click={modalIsOpen === false ? openModal : closeModal}
           counter={lista.length}
         ></BotaoCarrinho>
         <CarrinhoModal
