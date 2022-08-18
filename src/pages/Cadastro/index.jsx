@@ -49,7 +49,11 @@ function Cadastro() {
             type="checkbox"
             value={checked}
             name="termos"
-            onChange={(e) => setChecked(e.target.value ? true : false)}
+            onChange={(e) => {
+              if (checked === false)
+                return setChecked(e.target.value ? true : false);
+                else return setChecked(e.target.value ? false : true);
+            }}
           />
           <label htmlFor="">Li e concordo com os termos.</label>
         </div>
