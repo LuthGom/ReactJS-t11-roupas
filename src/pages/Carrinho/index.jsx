@@ -1,11 +1,11 @@
 import React from 'react'
-import { useState } from 'react'
+import styles from "./Carrinho.module.css";
 import ListaDeCompras from "../../components/ListaDeCompras"
 function Carrinho() {
 
   return (
-    <div>
-      <ListaDeCompras />
+    <div className={styles.containerLista}>
+      <ListaDeCompras containerListaCards={styles.containerListaCards} listaFooter={styles.listaFooter} containerCard={styles.containerCard} botaoFinalizarNome="Continuar Compra" />
     </div>
   )
 }

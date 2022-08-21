@@ -24,7 +24,7 @@ export default function CarrinhoModal({
       
   
 
-          <ListaDeCompras botaoNome="X" onClick={onClick} containerListaCards={styles.containerListaCards} modalFooter={styles.modalFooter} finalizarCompra={styles.finalizarCompra} clickFinalizar={onClick}/>
+          <ListaDeCompras botaoNome="X" botaoFinalizarNome="Ver Carrinho" onClick={onClick} containerCard={styles.containerCard} containerListaCards={styles.containerListaCards} titulo={styles.titulo} listaFooter={styles.modalFooter} finalizarCompra={styles.finalizarCompra} clickFinalizar={onClick}/>
   
    
     </Modal>

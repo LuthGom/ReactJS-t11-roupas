@@ -3,7 +3,7 @@ import { CarrinhoContext } from "../../context/CarrinhoProvider";
 import { Link } from "react-router-dom"
 import BotaoCarrinho from "../BotaoCarrinho"
 import styles from "./ListaDeCompras.module.css"
-function ListaDeCompras({ botaoNome, onClick, clickFinalizar, modalFooter, finalizarCompra, containerListaCards }) {
+function ListaDeCompras({ botaoNome, titulo, onClick, clickFinalizar, containerCard, listaFooter, finalizarCompra, containerListaCards, botaoFinalizarNome }) {
 
     const { lista, incrementaProdutos, decrementaOuRemove, qtde } = useContext(CarrinhoContext);
     return (
@@ -12,11 +12,11 @@ function ListaDeCompras({ botaoNome, onClick, clickFinalizar, modalFooter, final
 
                 {lista.map((produto, index) => {
                     return (
-                        <div className={styles.containerCard} key={index}>
+                        <div className={containerCard} key={index}>
                             <img src={produto.url_imagem} alt={produto.descricao} />
-                            <p className={styles.titulo}>{produto.titulo}</p>
-                            <p className={styles.preco}> R$ {produto.preco}</p>
+                            {titulo && (<p className={styles.titulo}>{produto.titulo}</p>)}
                             <p className={styles.descricao}>{produto.descricao}</p>
+                            <p className={styles.preco}> R$ {produto.preco}</p>
                             <div className={styles.counter}>
                                 <BotaoCarrinho
                                     addOuRemove="+"
@@ -40,9 +40,10 @@ function ListaDeCompras({ botaoNome, onClick, clickFinalizar, modalFooter, final
                 })}
             </div>
 
-            <div className={modalFooter}>
-                {!botaoNome || !onClick && <button style={{ display: 'none' }} className={styles.closeButton} onClick={onClick}>{botaoNome}</button> || <button className={styles.closeButton} onClick={onClick}>{botaoNome}</button>}
+            <div className={listaFooter}>
+                {!botaoNome || !onClick ? <button style={{ display: 'none' }} className={styles.closeButton} onClick={onClick}>{botaoNome}</button> : <button className={styles.closeButton} onClick={onClick}>{botaoNome}</button>}
                 <span>
+                    <p>{qtde.length} produtos</p>
                     Total: R$
                     {(qtde.length > 0 &&
                         qtde
@@ -61,7 +62,7 @@ function ListaDeCompras({ botaoNome, onClick, clickFinalizar, modalFooter, final
                         "0,00"}
                 </span>
                 <div className={finalizarCompra}>
-                    <Link to="/carrinho" onClick={clickFinalizar}>Finalizar Compra</Link>
+                    <Link to="/carrinho" onClick={clickFinalizar}>{botaoFinalizarNome}</Link>
                 </div>
             </div>
         </>
