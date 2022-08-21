@@ -99,6 +99,17 @@ div.containerCard {
   background-color: gray;
   cursor: pointer;
 }
+.finalizarCompra a{
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+}
+.finalizarCompra a:hover{
+  text-decoration: underline;
+  color: green;
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 550px) {
   .containerListaCards,
