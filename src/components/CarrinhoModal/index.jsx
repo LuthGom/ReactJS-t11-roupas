@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { CarrinhoContext } from "../../context/CarrinhoProvider";
 import BotaoCarrinho from "../BotaoCarrinho";
 import styles from "./Modal.module.css";
+import { Link } from "react-router-dom"
 Modal.setAppElement("#root");
 
 export default function CarrinhoModal({
@@ -78,6 +79,9 @@ export default function CarrinhoModal({
               })) ||
             "0,00"}
         </span>
+        <div className={styles.finalizarCompra}>
+          <Link to="/carrinho" onClick={onClick}>Finalizar Compra</Link>
+        </div>
       </div>
     </Modal>
   );
