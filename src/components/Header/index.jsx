@@ -21,12 +21,10 @@ function Home() {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [btnList, setBtnList] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
+  function openOrClose() {
+    modalIsOpen === false ? setIsOpen(true) : setIsOpen(false)
   }
-  function closeModal() {
-    setIsOpen(false);
-  }
+
   return (
     <header className={styles.container}>
       <div className={styles.categorias}>
@@ -83,28 +81,27 @@ function Home() {
                 </button>
               </div>
             )) || (
-              <div style={{ display: "block" }}>
-                <button
-                  onClick={() => auth.logout()}
-                  style={{ background: "none", border: "none" }}
-                >
-                  Logout
-                </button>
-              </div>
-            )}
+                <div style={{ display: "block" }}>
+                  <button
+                    onClick={() => auth.logout()}
+                    style={{ background: "none", border: "none" }}
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
           </div>
         )}
 
         <BotaoCarrinho
           addOuRemove={<FontAwesomeIcon icon={faCartShopping} />}
-          click={modalIsOpen === false ? openModal : closeModal}
+          click={openOrClose}
           counter={lista.length}
         ></BotaoCarrinho>
         <CarrinhoModal
           isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          onClick={closeModal}
-          botaoNome="X"
+          onRequestClose={() => setIsOpen(false)}
+          onClick={openOrClose}
         />
       </div>
     </header>
