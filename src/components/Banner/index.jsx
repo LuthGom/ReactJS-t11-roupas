@@ -1,5 +1,6 @@
 import banner from "../../assets/banner-promocional.png";
 import styles from "./Banner.module.css";
+import {Link} from "react-router-dom"
 function Banner() {
   return (
     <>
@@ -18,11 +19,13 @@ function Banner() {
         </div>
       </div>
       <div className={styles.banner}>
+        <Link to="/masculino">
         <img
           src={banner}
           alt="banner promocional com fotos de roupas masculinas e descontos e site da loja"
           
-        />
+          />
+          </Link>
       </div>
     </>
   );
