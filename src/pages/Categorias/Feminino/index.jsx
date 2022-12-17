@@ -7,7 +7,11 @@ export default function Feminino() {
 
   useEffect(() => {
     try {
-      fetch(produtosUrl("/femininos"))
+      fetch(produtosUrl("/femininos",{
+        header:{
+          "Access-Control-Allow-Origin": "*"
+        }
+      }))
         .then((res) => res.json())
         .then((data) => {
           setProdutos(data.Produtos);
